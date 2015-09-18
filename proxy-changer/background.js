@@ -8,7 +8,7 @@ var config = {
     rules: {
       proxyForHttp: {
         scheme: "http",
-        host: "xx.x.x.xx",
+        host: "x.x.x.xx",
         port: xxxx
       },
       bypassList: ["127.0.0.1"]
@@ -19,7 +19,7 @@ var config = {
 function changeShollProxy(){
   chrome.proxy.settings.set(
     {value: config, scope: "regular"},
-    function(){}
+    function(){window.close();}
   );
 }
 
@@ -27,7 +27,7 @@ function changeOuterProxy(){
   config.mode = "auto_detect";
   chrome.proxy.settings.set(
     {value: config, scope: "regular"},
-    function(){}
+    function(){window.close()}
   );
 
 }
